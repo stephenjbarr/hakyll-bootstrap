@@ -1,6 +1,10 @@
 hakyll-bootstrap
 ================
 
+## SJB notes
+
+1. Modified `cabal` file to get rid of upper bounds on dependencies. Seems okay so far.
+
 <p align="center" style="padding: 20px; width: 50%">
 <img src="https://raw.github.com/sdiehl/hakyll-bootstrap/master/sample.png">
 </p>

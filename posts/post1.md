@@ -1,5 +1,5 @@
 ---
-title: Example Blog Post
+title: A Blog post with math and code
 author: Stephen Diehl
 date: 2013-11-13
 mathjax: on
@@ -10,6 +10,8 @@ non est in neque luctus eleifend. Sed tincidunt vestibulum
 facilisis. Aenean ut pulvinar massa.
 
 Some math:
+
+$$x^3$$
 
 $$
 \begin{aligned}
