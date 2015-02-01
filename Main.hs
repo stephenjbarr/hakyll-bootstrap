@@ -72,11 +72,22 @@ pages = do
 
 posts :: Rules ()
 posts = do
-  match "posts/*" $ do
+  match "posts/*.md" $ do
     route $ setExtension "html"
     compile $ compiler
       >>= loadAndApplyTemplate "templates/post.html"    postCtx
       >>= relativizeUrls
+
+
+postsHTML :: Rules ()
+postsHTML = do
+  match "posts/*.html" $ do
+    route $ setExtension "html"
+    compile $ getResourceBody
+      >>= loadAndApplyTemplate "templates/post.html"    postCtx
+      >>= relativizeUrls
+
+
 
 archive :: Rules ()
 archive = do
@@ -119,6 +130,7 @@ main = hakyllWith cfg $ do
   static
   pages
   posts
+  postsHTML
   archive
   index
   templates

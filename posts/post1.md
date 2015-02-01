@@ -1,10 +1,10 @@
 ---
 title: A Blog post with math and code
 author: Stephen Diehl
-date: 2013-11-13
+date: 2015-01-30
 mathjax: on
 ---
-
+ 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
 non est in neque luctus eleifend. Sed tincidunt vestibulum
 facilisis. Aenean ut pulvinar massa.

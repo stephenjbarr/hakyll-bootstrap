@@ -8,6 +8,14 @@
 4. [X] Trying the "jumbotron header"
 5. [X] Changed navbar
 6. [X] Fixed navbar spacing in posts
+7. [ ] Test out org-mode posts
+8. [ ] Integrate Twitter and Github
+9. [ ] Move old posts
+10. [ ] Decide on URL scheme - redirects?
+11. [ ] stephen.planetbarr.com ? 
+12. [ ] Color theme
+
+
 
 
 ** Quick Summary
@@ -69,6 +77,17 @@ Inline math is enabled via setting the =mathjax= metadata to\\
     facilisis. Aenean ut pulvinar massa.
 #+END_EXAMPLE
 
+** Resources
+   1. http://www.chartjs.org/
+   2. https://dev.twitter.com/web/embedded-timelines#user
+   3. https://dev.twitter.com/web/embedded-tweets
+   4. https://fezvrasta.github.io/bootstrap-material-design/#navbar
+   5. https://github.com/qrohlf/trianglify
+   6. http://bootswatch.com/darkly/
+
+
+
 ** License
 
 Released under MIT License.
+
