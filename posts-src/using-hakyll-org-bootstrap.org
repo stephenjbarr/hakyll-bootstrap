@@ -9,11 +9,7 @@
 
 * The New Setup
 
-  I just decided to switch blogging platforms.  I found myself writing
-  blogposts and not posting them and that suggested to me that the
-  startup cost of my current setup was too high, and I was
-  subconciously avoiding posting.
-
+  I decided to update my blogging setup a bit.
   I had in the back of my mind a new setup and this weekend, I needed
   a mental break and this seemed like a good use of an afternoon.
   My new setup needed to meet the following requirements.
@@ -80,9 +76,9 @@
    Markdown. Note, I am using Org-mode to generate the HTML, rather
    than Pandoc. This gives me a bit more control over the HTML. 
 
-   [[https://hackage.haskell.org/package/shake][Shake]] is a build system. I am using this simply to manage exporting
-   the Org-mode files for the HTML export, and run the script to
-   generate the metadata files.
+   [[https://hackage.haskell.org/package/shake][Shake]] is a build system. I will be using this simply to manage
+   exporting the Org-mode files for the HTML export, and run the
+   script to generate the metadata files.
    
    
    
@@ -96,15 +92,18 @@
   4. Add any necessary tags using =ATTR_HTML=.
      In the [[*A%20post%20template][A post template]] section, see that I added a few classes to the table.
      This allowed the bootstrap to style these tables.
-  5. To export from Org-mode to HTML, from Emacs do =C-c C-e C-b h h=
+  5. Create an exporter for =HTML= files in Hakyll's Main.hs. 
+     See [[https://github.com/stephenjbarr/hakyll-bootstrap/commit/3bd736c94295b1b6f24865c763af869bd4787cca?diff%3Dsplit&short_path%3Daacb4ce#diff-0][this diff]] for the changes.
+  6. To export from Org-mode to HTML, from Emacs do =C-c C-e C-b h h=
      (yes, it's Emacs :) ).  The =C-c C-e= turns on the export option,
      =C-b= toggles body-only export, the first =h= is for HTML export,
-     the second =h= is for export html to file.
-   
+     the second =h= is for export html to file.  The idea of doing a
+     body-only export is that Hakyll is applying the templates,
+     inserting the nav bars, etc.
+  7. Compile and run Hakyll
+  8. Visit http://localhost:8000 to see your new site!
 
 
-
-** A Simple Hakyll HTML compiler
   
   
 ** A post template
@@ -123,3 +122,6 @@
 ** TODO Automate exporting of =.org= to =.html= using a build system (Shake)
 ** TODO Understand how to toggle posts being previewed without being published
 ** TODO How to use tags within Hakyll
+** TODO Make sure org-mode tags become Hakyll tags
+
+   The plan is to update this page as I figure out the above tasks.
