@@ -100,3 +100,8 @@ Inline math is enabled via setting the =mathjax= metadata to\\
 
 Released under MIT License.
 
+
+* Posts to write
+  1. [ ] Documentation of bibliography / zotero configuration
+  2. [ ] Documentation of org-mode setup
+
