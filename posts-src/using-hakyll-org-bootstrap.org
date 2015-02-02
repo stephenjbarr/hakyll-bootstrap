@@ -1,0 +1,125 @@
+#+TITLE: Using Hakyll, Org-mode, and Bootstrap
+#+AUTHOR: Stephen
+#+DATE: 2015-01-30
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+#+TAGS: blog org-mode hakyll haskell bootstrap howto
+#+bind: org-export-publishing-directory "../posts/"
+#+EXPORT_FILE_NAME:  ../posts/using-hakyll-org-mode-bootstrap.html
+
+* The New Setup
+
+  I just decided to switch blogging platforms.  I found myself writing
+  blogposts and not posting them and that suggested to me that the
+  startup cost of my current setup was too high, and I was
+  subconciously avoiding posting.
+
+  I had in the back of my mind a new setup and this weekend, I needed
+  a mental break and this seemed like a good use of an afternoon.
+  My new setup needed to meet the following requirements.
+
+** Requirements 
+
+   1. Static site. This way, I do not have to deal with hosting or
+      security issues.  Ideally, the static site generator would be
+      written in a language that I know and am comfortable with.
+   2. Support authoring posts in [[http://orgmode.org/][Org-mode]]. This would be a
+      supermodular in utility for me, because I already heavily use
+      Org-mode for managing my TODO lists, calendar, writing papers,
+      taking notes, and citing papers.
+   3. Enable customization without requiring it.  With Octopress, I
+      felt a bit stuck to simply applying pre-applied themes.
+   4. Allow me to use [[http://getbootstrap.com/][Bootstrap]]. I am not a designer, so I want to
+      leverage other peoples' work in this area.
+
+
+* The software stack
+
+   #+ATTR_HTML: :class table table-hover table-bordered   
+   |------------------+------------------+-----------------|
+   | Component        | Purpose          | Language        |
+   |------------------+------------------+-----------------|
+   | [[http://jaspervdj.be/hakyll/][Hakyll]]           | Site generator   | Haskell         |
+   | [[http://getbootstrap.com/][Bootstrap]]        | Layout and theme | CSS, Javascript |
+   | [[http://www.gnu.org/software/emacs/][Emacs]] + [[http://orgmode.org/][Org-mode]] | [[http://orgmode.org/manual/HTML-export.html][Generating HTML]]  | Org-mode, LISP  |
+   | [[https://hackage.haskell.org/package/shake][Shake]]            | Build system     | Haskell DSL     |
+   |------------------+------------------+-----------------|
+
+
+
+** Why these components? 
+
+   *NOTE:* I am writing this system so I remember why I made the
+   choices that I have, outsourcing my memory to a more reliable
+   substrate than my own.
+
+   [[http://jaspervdj.be/hakyll/][Hakyll]] had what I was looking for in a site generator.  It
+   generates static sites and seems to have an active community.  Its
+   role is to take content, apply transformations, apply templates and
+   CSS, and generate the HTML comprising the website itself.
+   [[http://www.reddit.com/r/haskell/comments/23xgzf/thoughts_on_hakyll_vs_octopress_for_an/][This discussion]] on the [[http://reddit.com/r/haskell][Haskell subreddit]] was very helpful.
+
+
+   [[http://getbootstrap.com/][Bootstrap]] sites look really nice, and seem to be really popular.  I
+   want to give myself the option to customize the site later, (or
+   hire someone else to do so), and Bootstrap seems [[http://en.wikipedia.org/wiki/Network_effect][extremely popular]].
+   It seems very customizable, but at the same time it did not take
+   much work at all to get things set up. I know very little about
+   HTML and CSS and do not want to jump too far down that rabbit hole
+   at the moment. I may experiment with the [[http://bootswatch.com/darkly/][Darkly]] bootstrap theme.
+
+   To get started, I forked [[http://www.stephendiehl.com/][Stephen Diehl's]] [[https://github.com/sdiehl/hakyll-bootstrap][Hakyll-Bootstrap]]
+   repository, which is a barebones bootstrap-based site generated
+   using Hakyll.
+
+   [[http://orgmode.org/][Org-mode]] needs its own writeup. I have been building up my org-mode
+   setup gradually since being an undergrad. It manages my calendar,
+   TODO lists, and everything. I am very comfortable writing in
+   org-mode, and it is easier for me to write documents with
+   citations, tables, and equations using org-mode rather than
+   Markdown. Note, I am using Org-mode to generate the HTML, rather
+   than Pandoc. This gives me a bit more control over the HTML. 
+
+   [[https://hackage.haskell.org/package/shake][Shake]] is a build system. I am using this simply to manage exporting
+   the Org-mode files for the HTML export, and run the script to
+   generate the metadata files.
+   
+   
+   
+
+* Details of the setup, how to get started
+
+  1. Fork [[https://github.com/sdiehl/hakyll-bootstrap][Hakyll-Bootstrap]] and follow the build instructions
+  2. Create a =posts-src= folder at the root. 
+     This is where the =.org= flies go.
+  3. Write some content.
+  4. Add any necessary tags using =ATTR_HTML=.
+     In the [[*A%20post%20template][A post template]] section, see that I added a few classes to the table.
+     This allowed the bootstrap to style these tables.
+  5. To export from Org-mode to HTML, from Emacs do =C-c C-e C-b h h=
+     (yes, it's Emacs :) ).  The =C-c C-e= turns on the export option,
+     =C-b= toggles body-only export, the first =h= is for HTML export,
+     the second =h= is for export html to file.
+   
+
+
+
+** A Simple Hakyll HTML compiler
+  
+  
+** A post template
+
+   The =org-mode= source to a post could look like this:
+
+   #+begin_html
+   <script src="https://gist.github.com/stephenjbarr/cd51b2f951e42615f48c.js"></script>
+   #+end_html
+   
+
+* List of use cases to test / figure out / document
+
+** TODO Citing papers with [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][org-ref]]
+** TODO Source code embedding without using Github gists
+** TODO Automate exporting of =.org= to =.html= using a build system (Shake)
+** TODO Understand how to toggle posts being previewed without being published
+** TODO How to use tags within Hakyll

@@ -8,13 +8,22 @@
 4. [X] Trying the "jumbotron header"
 5. [X] Changed navbar
 6. [X] Fixed navbar spacing in posts
-7. [ ] Test out org-mode posts
-8. [ ] Integrate Twitter and Github
-9. [ ] Move old posts
-10. [ ] Decide on URL scheme - redirects?
-11. [ ] stephen.planetbarr.com ? 
-12. [ ] Color theme
+7. [X] Test out org-mode posts
+8. [ ] Script to extract meta data from org-file and generate =.metadata= files
+9. [ ] Make a =ditaa= diagram or something similar to describe the process
+10. [ ] Use some sort of build system, e.g. shake
+11. [ ] Stub to quickly make a blog-post - Emacs macro, snippet? 
+12. [ ] Integrate Twitter and Github
+13. [ ] Move old posts
+14. [ ] Decide on URL scheme - redirects?
+15. [ ] stephen.planetbarr.com ? 
+16. [ ] Color theme - darkly
 
+
+
+** How to do org-mode posts
+
+   1. Do a blog post about this
 
 
 
