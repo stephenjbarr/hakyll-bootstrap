@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil   
 #+TAGS: blog org-mode hakyll haskell bootstrap howto
 #+bind: org-export-publishing-directory "../posts/"
-#+EXPORT_FILE_NAME:  /home/stevejb/Blog/hakyll-bootstrap/posts/using-hakyll-org-mode-bootstrap.html
+#+EXPORT_FILE_NAME:  ../posts/using-hakyll-org-mode-bootstrap.html
 
 * The New Setup
 
@@ -96,11 +96,16 @@
   4. Add any necessary tags using =ATTR_HTML=.
      In the [[*A%20post%20template][A post template]] section, see that I added a few classes to the table.
      This allowed the bootstrap to style these tables.
-  5. To export from Org-mode to HTML, from Emacs do =C-c C-e C-b h h=
+  5. Create an exporter for =HTML= files in Hakyll's Main.hs. 
+     See [[https://github.com/stephenjbarr/hakyll-bootstrap/commit/3bd736c94295b1b6f24865c763af869bd4787cca?diff%3Dsplit&short_path%3Daacb4ce#diff-0][this diff]] for the changes.
+  6. To export from Org-mode to HTML, from Emacs do =C-c C-e C-b h h=
      (yes, it's Emacs :) ).  The =C-c C-e= turns on the export option,
      =C-b= toggles body-only export, the first =h= is for HTML export,
-     the second =h= is for export html to file.
-   
+     the second =h= is for export html to file.  The idea of doing a
+     body-only export is that Hakyll is applying the templates,
+     inserting the nav bars, etc.
+  7. Compile and run Hakyll
+  8. Visit http://localhost:8000 to see your new site!
 
 
 
@@ -118,9 +123,11 @@
 
 * List of use cases to test / figure out / document
 
-- [ ] Citing papers with [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][org-ref]]
-- [ ] Source code embedding without using Github gists
-- [ ] Automate exporting of =.org= to =.html= using a build system (Shake)
-- [ ] Understand how to toggle posts being previewed without being published
-- [ ] How to use tags within Hakyll
-- white girl watsted
+** TODO Citing papers with [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][org-ref]]
+** TODO Source code embedding without using Github gists
+** TODO Automate exporting of =.org= to =.html= using a build system (Shake)
+** TODO Understand how to toggle posts being previewed without being published
+** TODO How to use tags within Hakyll
+** TODO Make sure org-mode tags become Hakyll tags
+
+   The plan is to update this page as I figure out the above tasks.
