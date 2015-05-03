@@ -64,7 +64,7 @@ static = do
 
 pages :: Rules ()
 pages = do
-  match "pages/*" $ do
+  match "pages/*.html" $ do
     route $ setExtension "html"
     compile $ getResourceBody
       >>= loadAndApplyTemplate "templates/page.html"    postCtx

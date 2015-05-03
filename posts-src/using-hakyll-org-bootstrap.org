@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil   
 #+TAGS: blog org-mode hakyll haskell bootstrap howto
 #+bind: org-export-publishing-directory "../posts/"
-#+EXPORT_FILE_NAME:  ../posts/using-hakyll-org-mode-bootstrap.html
+#+EXPORT_FILE_NAME:  /home/stevejb/Blog/hakyll-bootstrap/posts/using-hakyll-org-mode-bootstrap.html
 
 * The New Setup
 
@@ -118,8 +118,9 @@
 
 * List of use cases to test / figure out / document
 
-** TODO Citing papers with [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][org-ref]]
-** TODO Source code embedding without using Github gists
-** TODO Automate exporting of =.org= to =.html= using a build system (Shake)
-** TODO Understand how to toggle posts being previewed without being published
-** TODO How to use tags within Hakyll
+- [ ] Citing papers with [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][org-ref]]
+- [ ] Source code embedding without using Github gists
+- [ ] Automate exporting of =.org= to =.html= using a build system (Shake)
+- [ ] Understand how to toggle posts being previewed without being published
+- [ ] How to use tags within Hakyll
+- white girl watsted

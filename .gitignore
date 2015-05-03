@@ -9,3 +9,5 @@ _cache
 _site
 cabal.sandbox.config
 .cabal-sandbox/
+/Main
+/css/bootstrap.css.original

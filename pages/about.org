@@ -1,0 +1,19 @@
+#+TITLE: About Me
+#+AUTHOR: Stephen
+#+DATE: 2015-01-30
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+#+TAGS: meta self
+#+EXPORT_FILE_NAME:  /home/stevejb/Blog/hakyll-bootstrap/pages/about.html
+#+OPTIONS: html-postamble:nil
+
+* Short Biography
+
+  I am a 3rd year Operations Management PhD student at the [[http://uw.edu][University of Washington]]'s [[http://foster.uw.edu/][Foster School of Business]].
+  I am married to the love of my life, Dr Joanna Crook and we have two lovely children.
+
+* Current research
+
+  I am interested in applying machine learning and optimization techniques to improve operations.
+  Particularly, I am interested in making healthcare more efficient, personalized, and effective.
+  

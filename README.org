@@ -17,9 +17,13 @@
 13. [ ] Move old posts
 14. [ ] Decide on URL scheme - redirects?
 15. [ ] stephen.planetbarr.com ? 
-16. [ ] Color theme - darkly
+16. [ ] Color theme - simplex
 
 
+
+** Task list
+   1. Make about page
+   2. Decide on layout
 
 ** How to do org-mode posts
 
