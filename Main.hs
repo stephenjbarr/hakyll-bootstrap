@@ -17,6 +17,11 @@ import Data.Monoid (mappend)
 import qualified Data.Map as M
 
 --------------------------------------------------------------------
+-- Tags
+
+
+
+--------------------------------------------------------------------
 -- Contexts
 --------------------------------------------------------------------
 
@@ -85,6 +90,7 @@ postsHTML = do
     route $ setExtension "html"
     compile $ getResourceBody
       >>= loadAndApplyTemplate "templates/post.html"    postCtx
+      >>= loadAndApplyTemplate "templates/default.html" postCtx
       >>= relativizeUrls
 
 

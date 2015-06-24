@@ -1,0 +1,10 @@
+#+TITLE: Trial 3
+#+AUTHOR: Stephen J. Barr
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+#+TAGS: t3tag
+
+* Trial 3 headline
+
+  Here goes trial 3
+

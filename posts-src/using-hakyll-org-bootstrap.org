@@ -5,7 +5,6 @@
 #+OPTIONS: toc:nil   
 #+TAGS: blog org-mode hakyll haskell bootstrap howto
 #+bind: org-export-publishing-directory "../posts/"
-#+EXPORT_FILE_NAME:  ../posts/using-hakyll-org-mode-bootstrap.html
 
 * The New Setup
 

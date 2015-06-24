@@ -1,0 +1,50 @@
+#+TITLE: Another Org
+#+AUTHOR: Stephen
+#+DATE: 2015-06-23
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+#+TAGS: blog org-mode hakyll haskell bootstrap howto
+#+bind: org-export-publishing-directory "../posts/"
+
+* Here is a test post
+  Some content!
+
+   #+begin_src haskell
+let x = [1..10]
+   #+end_src
+
+** TODO Figure this out
+   <2015-06-23 Tue>
+   
+   Today is miserable
+
+** DONE Read the sudoku solver
+   CLOSED: [2015-06-23 Tue 22:39]
+   - Note taken on [2015-06-23 Tue 22:39] \\
+     This is a log. Stardate 121.3, to the nearest decimal point.
+   <2015-06-23 Tue>
+
+   #+begin_src haskell
+import MonadNondet (option)
+import Sudoku
+import System
+import Control.Monad
+ 
+solve = forM [(i,j) | i <- [1..9], j <- [1..9]] $ \(i,j) -> do
+    v <- valAt (i,j)       -- ^ for each board position
+    when (v == 0) $ do     -- if it's empty (we represent that with a 0)
+        a <- option [1..9] -- pick a number
+        place (i,j) a      -- and try to put it there
+ 
+main = do
+    [f] <- getArgs
+    xs <- readFile f
+    putStrLn . evalSudoku $ do { readSudoku xs; solve; showSudoku }
+   #+end_src
+
+** Metadata
+   
+   Last modified:
+   #+begin_src sh :results output replace :exports results
+date
+   #+end_src

@@ -1,0 +1,27 @@
+#+TITLE: The fucking title
+#+AUTHOR: Stephen J. Barr
+#+OPTIONS: toc:nil   
+#+TAGS: mdexport
+
+
+* A headline							 :with_a_tag:
+
+This is *bold*.
+
+Some math:
+
+\(x^{2}\)
+
+\begin{equation}
+y^{3}
+\end{equation}
+
+#+begin_src sh haskell
+newtype MonadMonoid m a = MonadMonoid { unMonad :: a -> m a }
+
+instance Monad m => Monoid (MonadMonoid m a) where
+  mempty = MonadMonoid return
+  mappend f g = MonadMonoid (f >=> g)
+#+end_src
+
+done

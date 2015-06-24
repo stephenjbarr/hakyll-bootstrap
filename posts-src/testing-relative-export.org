@@ -1,0 +1,39 @@
+#+TITLE: Using Hakyll, Org-mode, and Bootstrap
+#+AUTHOR: Stephen
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+
+
+* Hello								  :firstblog:
+  :PROPERTIES:
+  :ID:       84b8a728-47f4-4dc8-8f64-deef2add57f1
+  :EXPORT_FILE_NAME: ../posts/poop.html
+  :END:
+  <2015-05-24 Sun>
+
+  This is a relative export.
+  
+* This is a second blog post
+  :PROPERTIES:
+  :ID:       84b8a728-47f4-4dc8-8f64-deef2add57f1
+  :EXPORT_FILE_NAME: ../posts/second-post.html
+  :END:
+  <2015-05-29 Fri>
+
+  Here is a bunch of content.
+
+** And a subheading
+   With some subtext
+
+** Here is some sample code
+
+   #+begin_src sh
+echo POOP
+   #+end_src
+
+
+   And some python
+   #+begin_src python
+x = np.array(10)
+y = map(f, x)
+   #+end_src
