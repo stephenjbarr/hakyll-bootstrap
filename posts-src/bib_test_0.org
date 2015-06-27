@@ -1,0 +1,31 @@
+#+TITLE: Another Org
+#+AUTHOR: Stephen
+#+DATE: 2015-06-23
+#+SEQ_TODO: TODO(t) STARTED(s) WAITING(w) DELEGATED(g) APPT(a) | DONE(d) DEFERRED(f) CANCELLED(c)
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil   
+#+TAGS: bibliograpy
+
+
+* Inserting a bibliogrpahy
+  
+  I find the paper cite:bayati_data-driven_2014 to be quite fascinating.
+
+  citetext:weisstein_order_2015 is another type.
+
+
+  #+BEGIN_HTML
+  <div id="eq:my-eq">
+  #+END_HTML
+  \begin{equation}
+  \label{eq:my-eq}
+  x^{2} - y^{2} = z
+  \end{equation}
+
+
+  ref:eq:my-eq is a reference to this equation.
+  Will numbering work?
+
+
+  [[bibliography:/home/stevejb/Dropbox/bibliography/sjbmainbib.bib]]
+

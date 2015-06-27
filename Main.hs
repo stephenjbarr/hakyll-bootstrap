@@ -87,7 +87,7 @@ posts = do
 postsHTML :: Rules ()
 postsHTML = do
   match "posts/*.html" $ do
-    route $ setExtension "html"
+    route idRoute
     compile $ getResourceBody
       >>= loadAndApplyTemplate "templates/post.html"    postCtx
       >>= loadAndApplyTemplate "templates/default.html" postCtx

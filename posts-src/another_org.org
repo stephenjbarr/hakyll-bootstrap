@@ -1,10 +1,11 @@
 #+TITLE: Another Org
 #+AUTHOR: Stephen
 #+DATE: 2015-06-23
+#+SEQ_TODO: TODO(t) STARTED(s) WAITING(w) DELEGATED(g) APPT(a) | DONE(d) DEFERRED(f) CANCELLED(c)
 #+HTML_DOCTYPE: html5
 #+OPTIONS: toc:nil   
-#+TAGS: blog org-mode hakyll haskell bootstrap howto
-#+bind: org-export-publishing-directory "../posts/"
+#+FILETAGS: blog org-mode hakyll haskell bootstrap howto
+#+LATEX_CLASS: myfdparticle
 
 * Here is a test post
   Some content!
@@ -16,7 +17,7 @@ let x = [1..10]
 ** TODO Figure this out
    <2015-06-23 Tue>
    
-   Today is miserable
+   Some basic text
 
 ** DONE Read the sudoku solver
    CLOSED: [2015-06-23 Tue 22:39]
@@ -42,7 +43,143 @@ main = do
     putStrLn . evalSudoku $ do { readSudoku xs; solve; showSudoku }
    #+end_src
 
-** Metadata
+
+
+* Here is a section with some math:
+
+  $\chi^{2}$ is a statistic measuring goodness of fit.
+  The quadratic formula is $x=\frac{-b\pm\sqrt{b^2-4ac\ }}{2a}$
+
+* STARTED Test out the bibliography
+  SCHEDULED: <2015-06-24 Wed 16:00-17:00>
+  
+  - [X] Configure Zotero, zot-file, and Zotero auto-exporter
+  - [ ] Document the above
+  - [ ] Investigate [[https://github.com/jkitchin/org-ref][org-ref]] html support
+  - [ ] Look at CSS for formatting
+  - [ ] Some code to make sure all links to files are valid
+
+* STARTED Testing various tables
+  SCHEDULED: <2015-07-01 Wed 17:00-18:00>
+  - Note taken on [2015-06-24 Wed 15:21] \\
+    Need to make a list of ways to set various =ATTR_HTML= attributes for the table.
+  CLOCK: [2015-06-24 Wed 15:21]--[2015-06-24 Wed 15:22] =>  0:01
+  
+** A first table
+
+  |-------+-------|
+  | Col 1 | Col 2 |
+  |-------+-------|
+  | abc   | def   |
+  | ghi   | jkl   |
+  | mno   | pqr   |
+  | stu   | vwx   |
+  | y     | z     |
+  |-------+-------|
+
+** A nicer table
+
+   #+ATTR_HTML: :class table table-hover table-bordered   
+   |------------------+------------------+-----------------|
+   | Component        | Purpose          | Language        |
+   |------------------+------------------+-----------------|
+   | [[http://jaspervdj.be/hakyll/][Hakyll]]           | Site generator   | Haskell         |
+   | [[http://getbootstrap.com/][Bootstrap]]        | Layout and theme | CSS, Javascript |
+   | [[http://www.gnu.org/software/emacs/][Emacs]] + [[http://orgmode.org/][Org-mode]] | [[http://orgmode.org/manual/HTML-export.html][Generating HTML]]  | Org-mode, LISP  |
+   | [[https://hackage.haskell.org/package/shake][Shake]]            | Build system     | Haskell DSL     |
+   |------------------+------------------+-----------------|
+
+
+* TODO Think about tagged headings				 :thisisatag:
+  <2015-06-24 Wed>
+
+** What about multiple tags?					  :tag1:tag2:
+
+
+
+* TODO Numbered equations
+  :PROPERTIES:
+  :ID:       ffe5c929-1cad-4aaa-83f0-2d814b523f33
+  :END:
+  
+
+  #+BEGIN_HTML
+  <div id="eq:my-eq">
+  #+END_HTML
+  \begin{equation}
+  \label{eq:my-eq}
+  x^{2} - y^{2} = z
+  \end{equation}
+
+
+  ref:eq:my-eq is a reference to this equation.
+
+** TODO Configure MathJax for numbering
+   :PROPERTIES:
+   :ID:       f7dfdc54-5776-4a63-8580-6d629200ff61
+   :URL:      http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering     
+   :END:
+   See [[http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering][here]].
+
+  
+** TODO CSS to make the equation relationship clear
+
+** TODO Emacs yasnippet or other template to make div id and equation number consistent
+
+
+
+* TODO Figure out and document auto-export
+  :PROPERTIES:
+  :ID:       234e2c59-7e43-4534-9538-c50d17ff87f9
+  :END:
+  
+** TODO Link to org-mode file
+   :PROPERTIES:
+   :ID:       8b7c44e9-34bc-46b5-a45e-7d88805e4d29
+   :END:
+
+** TODO Link to pdf
+   :PROPERTIES:
+   :ID:       43cec229-f2b1-4f11-aaf6-2cd8a484eaaf
+   :END:
+
+** TODO Link to json
+   :PROPERTIES:
+   :ID:       8f78104b-66c4-4c44-8a35-f14ed0274206
+   :END:
+
+** Plan for export
+   :PROPERTIES:
+   :ID:       7713c5f8-6f7b-4378-8f5b-db3cdd871f4b
+   :END:
+   1. [ ] Write the org-mode
+      1. Have footer which appears linking to =org= and =pdf= versions of the document
+   2. [ ] Execute a lisp function does all exporting and related tasks
+      1. [ ] Runs ispell-buffer on buffer
+      2. [ ] Exports as HTML, body only
+      3. [ ] Exports as pdf, and then compiles
+	 - [ ] Make sure bibliography works
+	 - [ ] Modify pdf to show colored keywords
+	 - [ ] Make sure that PDF has URL embedded
+	 - [ ] Make sure all of the tmp files are compiled into a subdirectory
+      4. [ ] Generates a =.metadata= file with title, date, tags. This can be a separate script for now
+   3. Hakyll 
+      1. [ ] For html, apply posts and default tepmlates
+      2. [ ] For org, idRoute copy
+      3. [ ] For pdf, idRoute copy
+   4. [ ] Have a link at the bottom explaining the org markup, vc data.
+      This link can be in the footer of the posts template
+   5. [ ] The sequencing is
+      1. Proofread
+      2. Commit
+      3. org-mode export
+      4. build
+      
+   
+* Metadata
+
+  Can add some metadata with [[file:~/Blog/hakyll-bootstrap/posts/another_org.html.metadata::tags:%20h1%20t3%20t4][meta]].
+
    
    Last modified:
    #+begin_src sh :results output replace :exports results
